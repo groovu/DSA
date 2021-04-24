@@ -97,5 +97,3 @@ class LRUCache(OrderedDict):
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
-
-
