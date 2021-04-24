@@ -1,3 +1,5 @@
+# Weird!  So my implementation works as expected on PythonTutor, but not on Leetcode.
+# And the solutions in Leetcode just import a module to make it work.  Sorta cheating imo.
 from collections import OrderedDict
 ##from lru import LRU doesn't work in LC
 class LRUCache(OrderedDict):
