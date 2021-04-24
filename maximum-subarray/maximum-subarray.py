@@ -1,14 +1,15 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        max_sum = nums[0]
-        current_sum = max_sum
+        max_sum = -math.inf
+        current_sum = 0
         
-        for num in nums[1:]:
+        for num in nums[:]:
             current_sum = max(current_sum+num,num)
             max_sum = max(current_sum,max_sum)
         
         return max_sum
-    
+
+# imo this works, but two for loops is too slow.
 # class Solution:
 #     def maxSubArray(self, nums: List[int]) -> int:
 #         # Since I'm only keeping track of the largest sum
