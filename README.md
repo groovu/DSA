@@ -1,2 +1,2 @@
 # DSA
-Data Structures and Algorithms practice repo - Created using [LeetHub](https://github.com/QasimWani/LeetHub).
+Data Structures and Algorithms practice repo - Thanks to Qasim Wani for making [LeetHub!](https://github.com/QasimWani/LeetHub).
