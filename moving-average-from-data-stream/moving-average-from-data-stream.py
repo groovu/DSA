@@ -6,11 +6,15 @@ class MovingAverage:
         """
         self.window = size
         self.values = []
+        # since we are only tracking the moving average
+        # we can reduce our memory usage by only tracking the window size.
         
 
     def next(self, val: int) -> float:
         self.values.append(val)
-        window_sum = sum(self.values[-self.window:]) # [start:end], negative start means it'll wrap around.
+        if (len(self.values) > self.window):
+            self.values.pop(0) # get rid of first outside of window
+        window_sum = sum(self.values) 
         return window_sum/min(self.window, len(self.values))
         
 
