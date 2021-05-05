@@ -1,22 +1,28 @@
 class Solution:
     def isRobotBounded(self, instructions: str) -> bool:
-        # north = 0, east = 1, south = 2, west = 3
-        directions = [[0, 1], [1, 0], [0, -1], [-1, 0]]
-        # Initial position is in the center
-        x = y = 0
-        # facing north
-        idx = 0
+        horz = []
+        vert = []
+        dir = 0
+        # let 0123 = n,e,s,w
         
         for i in instructions:
-            if i == "L":
-                idx = (idx + 3) % 4
-            elif i == "R":
-                idx = (idx + 1) % 4
-            else:
-                x += directions[idx][0]
-                y += directions[idx][1]
+            if i == 'G':
+                #increment horz or vert depending on direction
+                if dir == 0:
+                    vert.append(1)
+                if dir == 1:
+                    horz.append(1)
+                if dir == 2:
+                    vert.append(-1)
+                if dir == 3:
+                    horz.append(-1)
+            if i == 'L':
+                dir = (dir + 3) % 4
+            if i == 'R':
+                # change dir
+                dir = (dir + 1) % 4
         
-        # after one cycle:
-        # robot returns into initial position
-        # or robot doesn't face north
-        return (x == 0 and y == 0) or idx != 0
+        posX = sum(horz)
+        posY = sum(vert)
+        
+        return (posX == 0 and posY == 0) or dir != 0
