@@ -25,6 +25,13 @@ class WordDistance:
                 index2 += 1
         return min_so_far
 
+# Time Complexity
+# O(len of words) to construct
+# O(number of indicies for word1 and 2) to search
+
+# Space Complexity
+#O(len of words), storing all words
+#O(1) to search, just checking indicies by referencing stored words.
 
 # Your WordDistance object will be instantiated and called as such:
 # obj = WordDistance(wordsDict)
