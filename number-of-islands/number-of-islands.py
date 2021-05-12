@@ -10,19 +10,22 @@ class Solution:
         max_x = len(grid[0]) - 1
 
         def bfs(y, x):
-            print(y, x)
-            if grid[y][x] == "0":
+            if y < 0 or x < 0 or y > max_y or x > max_x or grid[y][x] == "0":
                 return
             if grid[y][x] == "1":
                 grid[y][x] = "0"
-                up_y, up_x = min(y+1, max_y), x
-                d_y, d_x = max(y-1, 0), x
-                l_y, l_x = y, max(x-1, 0)
-                r_y, r_x = y, min(x+1, max_x)
-                bfs(up_y, up_x)
-                bfs(d_y, d_x)
-                bfs(l_y, l_x)
-                bfs(r_y, r_x)
+                # up_y, up_x = min(y+1, max_y), x
+                # d_y, d_x = max(y-1, 0), x
+                # l_y, l_x = y, max(x-1, 0)
+                # r_y, r_x = y, min(x+1, max_x)
+                # bfs(up_y, up_x)
+                # bfs(d_y, d_x)
+                # bfs(l_y, l_x)
+                # bfs(r_y, r_x)
+                bfs(y+1, x)
+                bfs(y-1, x)
+                bfs(y, x+1)
+                bfs(y, x-1)
 
 
         islands = 0
