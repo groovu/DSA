@@ -1,11 +1,11 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        max_sum = -math.inf
-        current_sum = 0
+        max_sum = -float("inf")
+        cur_sum = 0
         
-        for num in nums[:]:
-            current_sum = max(current_sum+num,num)
-            max_sum = max(current_sum,max_sum)
+        for num in nums:
+            cur_sum = max(cur_sum + num, num)
+            max_sum = max(max_sum, cur_sum)
         
         return max_sum
 
@@ -37,3 +37,13 @@ class Solution:
 #         #solution is too slow. timed out.
 #         # small things like if and max are costly when your input is huge.
 #         # after getting your scratch work done, remove the redundant work.
+
+        #max_sum = -math.inf
+#         current_sum = 0
+        
+#         for num in nums:
+#             current_sum = max(current_sum+num,num)
+#             max_sum = max(current_sum,max_sum)
+        
+#         return max_sum
+        
