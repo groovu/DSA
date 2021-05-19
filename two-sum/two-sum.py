@@ -5,8 +5,10 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        delta = [target - i for i in nums]
-        for i in range(len(delta)):
-            if delta[i] in nums:
-                if i != nums.index(delta[i]):
-                    return [i, nums.index(delta[i])]
+        res = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in res.keys():
+                return [res.get(complement), i]
+            res[nums[i]] = i
+        return []
